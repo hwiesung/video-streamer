@@ -57,7 +57,7 @@ router.get('/:bucket/:key', function(req, res) {
                 'Content-Length': contentLength,
                 'Content-Type': contentType,
             };
-            
+
             res.set(header);
             res.send(200);
             //res.writeHead(200, header);

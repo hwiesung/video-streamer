@@ -5,6 +5,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var streamingRouter = require('./routes/streaming');
+var thumbnailRouter = require('./routes/thumbnail');
 
 var app = express();
 
@@ -16,5 +17,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/streaming', streamingRouter);
+app.use('/thumbnail', thumbnailRouter);
 
 module.exports = app;
