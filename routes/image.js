@@ -14,7 +14,6 @@ const s3 = new AWS.S3({
 router.get('/:bucket/:key', function(req, res) {
     let bucket = req.params.bucket;
     let key = req.params.key;
-    logger.info(bucket+'/'+key);
     const params = {
         Bucket: bucket,
         Key: key
@@ -22,7 +21,6 @@ router.get('/:bucket/:key', function(req, res) {
 
     s3.getObject(params)
         .on('httpHeaders', function (statusCode, headers) {
-            console.log(headers);
             res.set('Content-Length', headers['content-length']);
             res.set('Content-Type', headers['content-type']);
             this.response.httpResponse.createUnbufferedStream()
