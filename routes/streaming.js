@@ -32,6 +32,8 @@ router.get('/:bucket/:key', function(req, res) {
         const contentLength = data.ContentLength;
         const range = req.headers.range;
 
+        console.log(range);
+
         if (range) {
             const parts = range.replace(/bytes=/, "").split("-");
             const start = parseInt(parts[0], 10);
@@ -55,8 +57,11 @@ router.get('/:bucket/:key', function(req, res) {
                 'Content-Length': contentLength,
                 'Content-Type': contentType,
             };
-            res.writeHead(200, header);
-            s3.getObject(params).createReadStream().pipe(res);
+            
+            res.set(header);
+            res.send(200);
+            //res.writeHead(200, header);
+            //s3.getObject(params).createReadStream().pipe(res);
         }
     });
 });
