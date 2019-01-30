@@ -14,6 +14,7 @@ const s3 = new AWS.S3({
 router.get('/:bucket/:key', function(req, res) {
     let bucket = req.params.bucket;
     let key = req.params.key;
+    logger.info(bucket+'/'+key);
     const params = {
         Bucket: bucket,
         Key: key
