@@ -12,11 +12,11 @@
     "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-dc93s%40peeple-7d3de.iam.gserviceaccount.com"
   },
   "awsKey": {
-    "access_key_id":"AKIAJLBC4A3R7VIUITEA",
-    "secret_access_key":"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"
+    "access_key_id":"AKIAIPVSC4QAJMAF3ZKQ",
+    "secret_access_key":"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"
   },
   "s3": {
-    "bucket": "peeple-video",
+    "bucket": "peeple-storage",
     "region": "ap-northeast-2"
   }
 }

@@ -8,13 +8,13 @@ const AWS = require('aws-sdk');
 const s3 = new AWS.S3({
     accessKeyId: config.awsKey.access_key_id,
     secretAccessKey: config.awsKey.secret_access_key,
-    region:'ap-northeast-2'
+    region:config.s3.region
 });
 
 router.get('/:bucket/:key', function(req, res) {
     let bucket = req.params.bucket;
     let key = req.params.key;
-    
+
     logger.info(bucket+'/'+key);
     const params = {
         Bucket: bucket,
